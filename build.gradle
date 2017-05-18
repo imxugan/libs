@@ -1,5 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+ext {
+    //定义android_common项目的路径
+    androidCommonDir = "${project.rootDir}";
+    relativePath=":";
+    //配置静态代码检查时检查debug包或者release包,"assemble"+productFlavor+buildtype
+    checkApk="assembleRelease"
+}
 buildscript {
     repositories {
         jcenter()
