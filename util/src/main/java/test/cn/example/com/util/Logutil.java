@@ -19,8 +19,11 @@ public class LogUtil {
     public final static void e(String message) {
         if (DEBUG <= LOG_ERROR) {
             StackTraceElement stackTrace = new Throwable().getStackTrace()[1];
+//            Log.e(TAG,
+//                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+//                            + INFO + message);
             Log.e(TAG,
-                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+                    stackTrace.getFileName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
                             + INFO + message);
         }
     }
@@ -28,8 +31,11 @@ public class LogUtil {
     public final static void i(String message) {
         if (DEBUG <= LOG_INFO) {
             StackTraceElement stackTrace = new Throwable().getStackTrace()[1];
+//            Log.i(TAG,
+//                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+//                            + INFO + message);
             Log.i(TAG,
-                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+                    stackTrace.getFileName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
                             + INFO + message);
         }
     }
@@ -37,8 +43,11 @@ public class LogUtil {
     public final static void d(String message) {
         if (DEBUG <= LOG_DUBEG) {
             StackTraceElement stackTrace = new Throwable().getStackTrace()[1];
+//            Log.d(TAG,
+//                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+//                            + INFO + message);
             Log.d(TAG,
-                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+                    stackTrace.getFileName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
                             + INFO + message);
         }
     }
@@ -46,11 +55,15 @@ public class LogUtil {
     public final static void w(String message) {
         if (DEBUG <= LOG_WARN) {
             StackTraceElement stackTrace = new Throwable().getStackTrace()[1];
+//            Log.w(TAG,
+//                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+//                            + INFO + message);
             Log.w(TAG,
-                    stackTrace.getClassName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
+                    stackTrace.getFileName() + INIO + stackTrace.getLineNumber() + INIO + stackTrace.getMethodName()
                             + INFO + message);
         }
     }
+
 
     public final static void ex(Throwable e) {
         if (BuildConfig.DEBUG) {
