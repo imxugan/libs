@@ -2,6 +2,7 @@ package test.cn.example.com.util;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.util.TypedValue;
 
 /**
  * Created by xgxg on 2017/8/9.
@@ -30,5 +31,13 @@ public class DensityUtil {
         return Math.round(dp * DENSITY);
     }
 
+    public static float sp2px(Context context,float spVal){
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,spVal,
+                context.getResources().getDisplayMetrics());
+    }
+
+    public static float px2sp(Context context,float pxVal){
+        return pxVal/context.getResources().getDisplayMetrics().scaledDensity;
+    }
 
 }
