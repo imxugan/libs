@@ -1,4 +1,4 @@
-package com.xywy.routerstub;
+package com.my.routerstub;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

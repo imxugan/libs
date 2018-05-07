@@ -1,12 +1,9 @@
-package com.xywy.routerstub;
+package com.my.routerstub;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-
-import com.xywy.activityrouter.ObjectUtils;
-import com.xywy.activityrouter.Router;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,14 +16,6 @@ public class MainActivity extends AppCompatActivity {
         clickme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                xywymainExtra.setIntExtra("int1,int2".split(","));
-//                xywymainExtra.setDoubleExtra("double1,double2".split(","));
-//                xywymainExtra.setBooleanExtra("boolean1,boolean2".split(","));
-//                xywymainExtra.setByteExtra("byte1,byte2".split(","));
-//                xywymainExtra.setCharExtra("chat1,chat2".split(","));
-//                xywymainExtra.setFloatExtra("float1,float2".split(","));
-//                xywymainExtra.setLongExtra("long1,long2".split(","));
-//                xywymainExtra.setShortExtra("short1,short2".split(","));
                 TestModel model = new TestModel();
                 model.id = 998;
                 model.name = "test model";

@@ -1,4 +1,4 @@
-package com.xywy.routerstub;
+package com.my.routerstub;
 
 import java.io.Serializable;
 
