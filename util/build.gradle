@@ -29,3 +29,13 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     testCompile 'junit:junit:4.12'
 }
+
+task printProperties {
+    doLast {
+        println "${project.projectDir}/-----------project.projectDir"	//Local extra property
+        println "${project.rootDir}/-----------project.rootDir"	//Local extra property
+        println "${rootProject.rootDir}/----------rootProject.rootDir"	//Local extra property
+        println "${rootProject.projectDir}/----------rootProject.projectDir"	//Local extra property
+        println "${rootProject.buildDir}/---------rootProject.buildDir"	//Local extra property
+    }
+}
