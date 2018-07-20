@@ -1,7 +1,10 @@
 package test.cn.example.com.util;
 
 import android.app.ActivityManager;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
@@ -100,15 +103,17 @@ public class AppUtils {
         }
         return defaultValue;
     }
-//    public static void  restart(Context context){
-//        Intent intent = context.getPackageManager()
-//                .getLaunchIntentForPackage(context.getPackageName());
-//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
-//        PendingIntent restartIntent = PendingIntent.getActivity(context, 0, intent, Intent.FLAG_ACTIVITY_NEW_TASK);
-//        AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-//        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, restartIntent); // 1000ms后重启应用
-//        android.os.Process.killProcess(android.os.Process.myPid());
-//    }
+
+    public static void  restart(Context context){
+        Intent intent = context.getPackageManager()
+                .getLaunchIntentForPackage(context.getPackageName());
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent restartIntent = PendingIntent.getActivity(context, 0, intent, Intent.FLAG_ACTIVITY_NEW_TASK);
+        AlarmManager mgr = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, restartIntent); // 1000ms后重启应用
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
     /**
      * 获取状态栏高度
      *
